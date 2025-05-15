@@ -1,0 +1,20 @@
+.animate-label {
+    display: inline-block;
+    transition: color 0.3s ease;
+    transform-origin: center;
+  }
+  
+  .card-product {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(80, 111, 217, 0.1);
+  }
+  
+  .card-label .char {
+    display: inline-block;
+    transform-origin: bottom;
+  }

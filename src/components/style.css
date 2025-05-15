@@ -1,0 +1,18 @@
+.subscribe_btn {
+    background-color: transparent;
+    color: black !important;
+    width: 100%;
+}
+.subscribe_btn:hover {
+    background-color: #14213d;
+    color: white !important;
+}
+
+.subscribe_btn_already {
+    width: 100%;
+    background-color: #ffffff !important;
+    color: rgb(0, 0, 0) !important;
+}
+.noDownGrande {
+    background-color: #ffe7e7 !important;
+}

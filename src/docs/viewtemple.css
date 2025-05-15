@@ -1,0 +1,311 @@
+.temple_title {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Quicksand";
+}
+
+.temple_title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--heading-color, #1e293b);
+}
+
+.temple_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 600px), 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.temple_view_card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--card-bg, white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border-color, #e5e7eb);
+  padding: 10px;
+  position: relative; /* Added for absolute positioning of buttons */
+}
+
+.temple_view_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.temple_card_media {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.temple_card_media .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.temple_card_media img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.temple_card_details {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Remove margin-bottom to prevent pushing buttons out of view */
+  padding-bottom: 70px; /* Add padding to make space for buttons */
+}
+
+.temple_card_details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--heading-color, #1e293b);
+}
+
+.temple_card_details p {
+  color: var(--text-color, #64748b);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  max-height: 100px;
+  overflow-y: auto; /* Changed from scroll to auto */
+}
+
+.temple_card_details a:last-of-type {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--location-color, #475569);
+}
+
+.temple_card_details a:last-of-type::before {
+  content: "📍";
+  font-size: 1rem;
+}
+
+.temple_card_audio {
+  padding: 1rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 150px;
+  overflow-y: auto; /* Changed from scroll to auto */
+}
+
+.temple_card_audio::-webkit-scrollbar {
+  width: 6px;
+}
+
+.temple_card_audio::-webkit-scrollbar-track {
+  background: var(--scrollbar-track, #f1f1f1);
+  border-radius: 10px;
+}
+
+.temple_card_audio::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #c1c1c1);
+  border-radius: 10px;
+}
+
+.temple_card_audio audio {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* Temple card actions - Updated to ensure buttons are always visible */
+.temple_card_actions {
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10; /* Ensure buttons are above other content */
+}
+
+.temple_card_actions button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+.temple_card_actions button:hover {
+  transform: translateY(-2px);
+}
+
+/* Edit modal styles */
+.photo_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.photo_item,
+.audio_item {
+  position: relative;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.photo_item .thumbnail {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.remove_btn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.audio_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.audio_item {
+  padding: 0.5rem;
+  position: relative;
+}
+
+.audio_item audio {
+  width: 100%;
+}
+
+.photo_preview,
+.audio_preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.photo_preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.no_temples {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--card-bg, white);
+  border-radius: 0.5rem;
+  border: 1px dashed var(--border-color, #e5e7eb);
+}
+
+.no_temples h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color, #1e293b);
+}
+
+.no_temples p {
+  color: var(--text-color, #64748b);
+}
+
+/* Dark mode styles */
+:root {
+  --heading-color: #1e293b;
+  --text-color: #64748b;
+  --location-color: #475569;
+  --card-bg: white;
+  --border-color: #e5e7eb;
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+}
+
+.dark {
+  --heading-color: #e2e8f0;
+  --text-color: #94a3b8;
+  --location-color: #cbd5e1;
+  --card-bg: #1e293b;
+  --border-color: #334155;
+  --scrollbar-track: #334155;
+  --scrollbar-thumb: #64748b;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .temple_view_card {
+    flex-direction: row;
+    max-height: 350px;
+  }
+
+  .temple_card_media {
+    width: 40%;
+    height: 100%;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .temple_card_details {
+    width: 60%;
+    padding: 1.5rem 1rem 1.5rem 1.5rem;
+    padding-bottom: 70px; /* Maintain space for buttons */
+  }
+
+  /* Adjust button position for horizontal layout */
+  .temple_card_actions {
+    left: calc(40% + 25px); /* Position after the image section */
+  }
+}
+
+/* Swiper customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.3);
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1rem !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: white !important;
+}

@@ -1,0 +1,63 @@
+[
+    {
+        "name": "Base",
+        "price": 2999,
+        "features": [
+            "Unique Store ID Registration",
+            "Digital Store",
+            "Store Analysis of Individual Stores",
+            "Upto 15 Images Upload"
+        ],
+        "ImagePath" : "/images/allow.svg",
+        "style" : {
+            "box-shadow": "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px",
+            "background" : "#e9ecef",
+            "border" : "1px solid #ced4da",
+            "border-radius" : "10px"
+        }
+    },
+    {
+        "name": "Premium",
+        "price": 4999,
+        "features": [
+            "Unique Store ID Registration",
+            "Digital Store",
+            "Store Analysis of Individual Stores",
+            "Upto 35 Images Upload",
+            "Open Offers and Discounts",
+            "Pre-Bokking table",
+            "Know Your Customers"
+        ],
+        "ImagePath" : "/images/allow.svg",
+        "style" : {
+            "background": "linear-gradient(135deg, #caf0f8 0%, #48cae4 100%)",
+            "box-shadow": "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+            "backdrop-filter": "blur( 20px )",
+            "-webkit-backdrop-filter": "blur( 20px )",
+            "border-radius": "10px"
+        }
+    },
+    {
+        "name": "Premium Pro",
+        "price": 9999,
+        "features": [
+            "Unique Store ID Registration",
+            "Digital Store",
+            "Store Analysis of Individual Stores",
+            "Upto Unlimited Images Upload",
+            "Open Offers and Discounts",
+            "Pre-Bokking table",
+            "Know Your Customers",
+            "Pre-Order Food"
+        ],
+        "ImagePath" : "/images/allow.svg",
+        "style" : {
+            "background": "rgb(253,224,167)",
+            "background": "linear-gradient(93deg, rgba(253,224,167,1) 0%, rgba(255,151,91,1) 100%)",
+            "box-shadow": "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+            "backdrop-filter": "blur( 20px )",
+            "-webkit-backdrop-filter": "blur( 20px )",
+            "border-radius": "10px"
+        }
+    }
+]
