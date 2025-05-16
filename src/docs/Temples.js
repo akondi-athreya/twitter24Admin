@@ -133,7 +133,7 @@ const Temples = () => {
                             </FormGroup>
                             <FormGroup>
                                 <label htmlFor="description">Temple Description<span style={{color: 'red'}}>*</span></label>
-                                <textarea id="description" className="form-control" value={templeData.description} style={{height: '150px'}}
+                                <textarea id="description" className="form-control" value={templeData.description} style={{height: '250px'}}
                                 placeholder="Enter temple description" name='description' onChange={(e) => handleInputChange(e)}/>
                             </FormGroup>
                             <FormGroup>
