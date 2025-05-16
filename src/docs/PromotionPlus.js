@@ -71,7 +71,7 @@ const PromotionPlus = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="card-title">Upload Banner</label>
+                                    <label className="card-title">Upload Banner (Better to Upload 460 x 500)</label>
                                     <input type="file" className="form-control" accept="image/*" />
                                 </div>
                             </div>

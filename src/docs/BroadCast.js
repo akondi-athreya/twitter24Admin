@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from '../layouts/Header';
 import { Form, Card, Button, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import { toast, ToastContainer, Flip } from 'react-toastify';
+import toast, { ToastBar, Toaster } from 'react-hot-toast';
 
 const BroadCast = () => {
     const currentSkin = (localStorage.getItem('skin-mode')) ? 'dark' : '';
@@ -27,12 +27,20 @@ const BroadCast = () => {
                 setVideo(imagePath.split('.').pop() === 'mp4' || imagePath.split('.').pop() === 'webm' || imagePath.split('.').pop() === 'ogg');
             })
             .catch(error => {
-                console.log(error);
-                toast.error('Failed to fetch banner', {
-                    position: "top-center",
-                    theme: "colored",
-                    transition: Flip,
-                });
+                if (error.response === undefined) {
+                    toast.error('No banner found', {
+                        position: "top-center",
+                        theme: "colored",
+                        style: {
+                            fontSize: '1.1rem',
+                        },
+                    });
+                } else {
+                    toast.error('Error fetching banner', {
+                        position: "top-center",
+                        theme: "colored"
+                    });
+                }
             });
     }
 
@@ -47,8 +55,7 @@ const BroadCast = () => {
         if (!selectedFile) {
             toast.error('Please select a file to upload.', {
                 position: "top-center",
-                theme: "colored",
-                transition: Flip,
+                theme: "colored"
             });
             return;
         }
@@ -68,7 +75,6 @@ const BroadCast = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    transition: Flip,
                 });
                 setSelectedFile(null);
                 fetchBanner(); // Refresh banner after upload
@@ -78,7 +84,6 @@ const BroadCast = () => {
                 toast.error('Upload Failed', {
                     position: "top-center",
                     theme: "colored",
-                    transition: Flip,
                 });
             })
             .finally(() => {
@@ -93,7 +98,6 @@ const BroadCast = () => {
             toast.error('No banner to delete', {
                 position: "top-center",
                 theme: "colored",
-                transition: Flip,
             });
             return;
         }
@@ -111,7 +115,6 @@ const BroadCast = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "colored",
-                    transition: Flip,
                 });
                 setBanner('');
                 setVideo(false);
@@ -121,7 +124,6 @@ const BroadCast = () => {
                 toast.error('Delete Failed', {
                     position: "top-center",
                     theme: "colored",
-                    transition: Flip,
                 });
             })
             .finally(() => {
@@ -132,7 +134,7 @@ const BroadCast = () => {
     return (
         <>
             <Header onSkin={setSkin} />
-            <ToastContainer />
+            <Toaster />
             <div className="main main-app p-3 p-lg-4">
                 <Container>
                     <Row className="mb-4">

@@ -239,7 +239,7 @@ const ViewTemples = () => {
                             <div className="temple_view_card" key={index}>
                                 <div className="temple_card_details">
                                     <h3>{temple.name}</h3>
-                                    <p>{temple.description}</p>
+                                    <p style={{ whiteSpace: 'pre-line' }}>{temple.description}</p>
                                     <a href={temple.location} target="_blank" rel="noreferrer">
                                         location on map
                                     </a>
